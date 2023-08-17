@@ -1,8 +1,9 @@
 import React from 'react'
+import './BotonNavbar.css'
 
 function BotonNavbar({ text }) {
   return (
-    <button>{text}</button>
+    <button className='buttonContainer'>{text}</button>
   )
 }
 

@@ -1,0 +1,18 @@
+.buttonContainer{
+    width: 95px;
+    padding: 8px;
+    border-radius: 20%;
+    margin-right: 10px;
+    text-decoration: none;
+    border-style: none;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.buttonContainer:hover{
+    border: 1px solid black;
+}
+
+.buttonContainer:focus{
+    background-color: yellow;
+}

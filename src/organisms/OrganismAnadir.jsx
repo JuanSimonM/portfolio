@@ -1,13 +1,7 @@
-import React from 'react'
-import Navbar from '../components/navbar/Navbar'
+import React from "react";
 
 function OrganismAnadir() {
-  return (
-    <div>
-        <Navbar></Navbar>
-        
-    </div>
-  )
+  return <div></div>;
 }
 
-export default OrganismAnadir
+export default OrganismAnadir;

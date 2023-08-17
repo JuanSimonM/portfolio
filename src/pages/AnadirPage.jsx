@@ -6,7 +6,6 @@ function AnadirPage() {
   return (
     <>
     <OrganismAnadir />
-    <div>Esta es la pagina para anadir personajes.</div>
     </>
     
   )

@@ -5,7 +5,6 @@ function InicioPage() {
   return (
     <>
     <OrganismInicio />
-    <div>En esta pagina se muestran todos los personajes.</div>
     </>
   )
 }
