@@ -12,6 +12,11 @@
     margin: 20px;
     border-style: groove;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+.card:hover{
+    background-color: rgba(128, 128, 128, 0.219);
 }
 
 .cardImage{

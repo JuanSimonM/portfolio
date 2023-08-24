@@ -1,14 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Cards from "../components/Cards/Cards";
-import { getPersonajes } from "../API";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { getPersonajes, getDetails } from "../API";
 import CardDetailModal from "../atoms/CardDetailModal/CardDetailModal";
 
 function OrganismInicio() {
   const [personajes, setPersonajes] = useState([]);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   useEffect(() => {
     async function fetchPersonajes() {
       const personajesData = await getPersonajes();
@@ -17,27 +16,22 @@ function OrganismInicio() {
 
     fetchPersonajes();
   }, []);
-  const getDetails = async (id) => {
-    try {
-      const url = "https://rickandmortyapi.com/api/character/" + id;
-      const response = await axios.get(url);
-      setSelectedCharacter(response.data);
-      setIsModalOpen(true);
-      console.log("aca", response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedCharacter(null);
+
+  const openModal = async (id) => {
+    const characterDetails = await getDetails(id);
+    setSelectedCharacter(characterDetails);
+    setIsModalOpen(true);
   };
 
-  console.log("Respuesta navbar", personajes);
+  const closeModal = () => {
+    setSelectedCharacter(null);
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="organismCardsContainer">
       {personajes.map((personaje) => (
-        <div key={personaje.id} onClick={() => getDetails(personaje.id)}>
+        <div key={personaje.id} onClick={() => openModal(personaje.id)}>
           <Cards title={personaje.name} image={personaje.image} />
         </div>
       ))}

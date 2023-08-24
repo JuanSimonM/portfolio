@@ -14,10 +14,13 @@ function Navbar() {
         <Link to="/">
           <BotonNavbar text="Inicio" />
         </Link>
-
+        <Link to="/locations">
+          <BotonNavbar text="Ubicación" />
+        </Link>
         <Link to="/anadir">
           <BotonNavbar text="Añadir" />
         </Link>
+
       </div>
     </div>
   );

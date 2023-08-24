@@ -7,6 +7,18 @@ const instance = axios.create({
 export const getPersonajes = async () => {
   const url = "/character";
   const response = await instance.get(url);
-  console.log(response.data.results);
   return response.data.results;
+};
+
+export const getLocations = async () => {
+  const url = "/location";
+  const response = await instance.get(url);
+  return response.data.results;
+};
+
+export const getDetails = async (id) => {
+  console.log("asdasdasdasdasdasdas", id);
+  const url = "/character/" + id;
+  const response = await instance.get(url);
+  return response.data;
 };
